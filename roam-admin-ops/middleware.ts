@@ -10,9 +10,20 @@ export async function middleware(req: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
+  // Use APP_ENV or NODE_ENV to determine environment
+  const appEnv = process.env.APP_ENV || process.env.NODE_ENV;
+  let baseUrl: string;
+  if (appEnv === 'production') {
+    baseUrl = 'https://roamyourbestlifeops.com';
+  } else {
+    baseUrl = 'http://localhost:3000';
+  }
+
+  console.log('APP_ENV:', appEnv, 'Redirecting to:', baseUrl);
+
   // Redirect to login if not authenticated
   if (!user && req.nextUrl.pathname !== '/login') {
-    return NextResponse.redirect(new URL('/login', 'https://roamyourbestlifeops.com'))
+    return NextResponse.redirect(new URL('/login', baseUrl))
   }
 
   // Check admin privileges for authenticated users
@@ -26,7 +37,7 @@ export async function middleware(req: NextRequest) {
 
     if (!adminUser) {
       await supabase.auth.signOut()
-      return NextResponse.redirect(new URL('/login', 'https://roamyourbestlifeops.com'))
+      return NextResponse.redirect(new URL('/login', baseUrl))
     }
   }
 
