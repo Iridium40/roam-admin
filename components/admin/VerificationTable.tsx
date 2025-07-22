@@ -1,0 +1,1 @@
+// VerificationTable component placeholder 
