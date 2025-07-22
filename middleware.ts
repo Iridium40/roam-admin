@@ -13,7 +13,7 @@ export async function middleware(req: NextRequest) {
   // Use APP_ENV or NODE_ENV to determine environment
   const appEnv = process.env.APP_ENV || process.env.NODE_ENV;
   let baseUrl: string;
-  if (appEnv === 'production') {
+  if (appEnv === 'development') {
     baseUrl = 'https://roamyourbestlifeops.com';
   } else {
     baseUrl = 'http://localhost:3000';
