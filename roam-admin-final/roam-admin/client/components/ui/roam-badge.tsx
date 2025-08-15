@@ -8,6 +8,7 @@ const roamBadgeVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground",
+        primary: "bg-primary text-primary-foreground",
         secondary: "bg-secondary text-secondary-foreground",
         success: "bg-roam-success text-white",
         warning: "bg-roam-warning text-foreground",
