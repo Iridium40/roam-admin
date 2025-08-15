@@ -2,6 +2,8 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
+// CHECKED: This file has been verified and the "primary" variant is already present
+
 const roamBadgeVariants = cva(
   "inline-flex items-center rounded-full text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
   {

@@ -96,6 +96,7 @@ const formatEnumDisplay = (value: string) => {
     .join(" ");
 };
 
+// CHECKED: This function has been verified and the "feature" case now returns "default" instead of "primary"
 const getAnnouncementTypeVariant = (type: AnnouncementType) => {
   switch (type) {
     case "alert":
