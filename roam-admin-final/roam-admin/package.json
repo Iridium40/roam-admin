@@ -14,8 +14,7 @@
     "start": "node dist/server/node-build.mjs",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
-    "typecheck": "tsc",
-    "postinstall": "echo 'Dependencies installed successfully'"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.52.1",
