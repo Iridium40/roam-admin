@@ -1,0 +1,19 @@
+{
+  "buildCommand": "cd roam-admin-final/roam-admin && npm run build",
+  "outputDirectory": "roam-admin-final/roam-admin/dist/spa",
+  "functions": {
+    "roam-admin-final/roam-admin/api/**/*.ts": {
+      "runtime": "@vercel/node@3.0.7"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/roam-admin-final/roam-admin/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
