@@ -3,14 +3,11 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "scripts": {
     "build": "cd roam-admin-final/roam-admin && npm install && npm run build",
     "dev": "cd roam-admin-final/roam-admin && npm run dev",
     "start": "cd roam-admin-final/roam-admin && npm run start"
-  },
-  "workspaces": [
-    "roam-admin-final/roam-admin"
-  ]
+  }
 }
