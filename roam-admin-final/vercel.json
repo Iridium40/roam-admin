@@ -1,16 +1,16 @@
 {
-  "buildCommand": "cd roam-admin && npm run build",
-  "outputDirectory": "roam-admin/dist/spa",
-  "installCommand": "cd roam-admin && npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/spa",
+  "installCommand": "npm install",
   "functions": {
-    "roam-admin/api/**/*.ts": {
+    "api/**/*.ts": {
       "runtime": "@vercel/node@3.0.7"
     }
   },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/roam-admin/api/$1"
+      "destination": "/api/$1"
     },
     {
       "source": "/(.*)",
